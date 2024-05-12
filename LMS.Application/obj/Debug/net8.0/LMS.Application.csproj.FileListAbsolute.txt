@@ -1,0 +1,15 @@
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.csproj.AssemblyReference.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.AssemblyInfoInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.AssemblyInfo.cs
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.csproj.CoreCompileInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\bin\Debug\net8.0\LMS.Application.deps.json
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\bin\Debug\net8.0\LMS.Application.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\bin\Debug\net8.0\LMS.Application.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\bin\Debug\net8.0\LMS.Domain.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\bin\Debug\net8.0\LMS.Domain.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.csproj.CopyComplete
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\refint\LMS.Application.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\LMS.Application.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Application\obj\Debug\net8.0\ref\LMS.Application.dll

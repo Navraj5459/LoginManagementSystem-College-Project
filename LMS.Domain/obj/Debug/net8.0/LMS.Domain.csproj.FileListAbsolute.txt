@@ -1,0 +1,12 @@
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.csproj.AssemblyReference.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.AssemblyInfoInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.AssemblyInfo.cs
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.csproj.CoreCompileInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\bin\Debug\net8.0\LMS.Domain.deps.json
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\bin\Debug\net8.0\LMS.Domain.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\bin\Debug\net8.0\LMS.Domain.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\refint\LMS.Domain.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\LMS.Domain.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Domain\obj\Debug\net8.0\ref\LMS.Domain.dll

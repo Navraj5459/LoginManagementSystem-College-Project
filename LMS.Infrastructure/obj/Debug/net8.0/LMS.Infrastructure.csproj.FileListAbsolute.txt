@@ -1,0 +1,17 @@
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.csproj.AssemblyReference.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.AssemblyInfoInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.AssemblyInfo.cs
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Infrastructure.deps.json
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Infrastructure.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Infrastructure.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Application.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Domain.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Application.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\bin\Debug\net8.0\LMS.Domain.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.csproj.CopyComplete
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\refint\LMS.Infrastructure.dll
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\LMS.Infrastructure.pdb
+E:\Study\Final Year (ISMT)\CyberSecurity\Assignment\2nd\LoginManagementSystem\LMS.Infrastructure\obj\Debug\net8.0\ref\LMS.Infrastructure.dll

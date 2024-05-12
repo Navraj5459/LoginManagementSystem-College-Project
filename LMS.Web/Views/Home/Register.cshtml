@@ -1,0 +1,375 @@
+﻿@using AspNetCore.ReCaptcha
+@model LMS.Domain.Entities.ViewModels.Register.RegisterViewModel
+@{
+    Layout = null;
+    int ErrorCode = 200;
+    var Message = "";
+    if (ViewData["Response"] != null)
+    {
+        var res = (LMS.Domain.Entities.Domain.BaseResponseModel)ViewData["Response"];
+        if (res != null)
+        {
+            ErrorCode = res.ErrorCode;
+            Message = res.Message;
+        }
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LMS | Register</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/lib/notiflix/notiflix.css" rel="stylesheet" />
+</head>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="/Home/Register" class="h1"><b>Register</b></a>
+            </div>
+            <div class="card-body">
+                <p class="register-box-msg">
+                    Register a new membership
+                </p>
+                <form id="UserRegister" class="mb-3" asp-action="Register" asp-controller="Home" method="POST" asp-antiforgery="true">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <input asp-for="FullName" type="text" class="form-control" placeholder="Full Name" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="FullName-error" class="error" for="FullName"></label>
+                            <span asp-validation-for="FullName"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <select class="form-control" asp-for="UserType" asp-items="Model.UserTypeList">
+                                </select>
+                            </div>
+                            <label id="UserType-error" class="error" for="UserType"></label>
+                            <span asp-validation-for="UserType"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <input asp-for="Email" type="text" class="form-control" placeholder="Email" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="Email-error" class="error" for="Email"></label>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                        <div class="col-md-12 mb-3 validation-container">
+                            <div class="input-group">
+                                <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-eye-slash pwdtoggle"></span>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="Password-error" class="error" for="Password"></label>
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="col-md-12 error-message-validation">
+                            <div id="LengthError" class="error-message"><i class="fas fa-circle-xmark"></i><span>Password must be between 8 and 20 characters</span></div>
+                            <div id="LowercaseError" class="error-message"><i class="fas fa-circle-xmark"></i><span>Password must contain at least one lowercase letter</span></div>
+                            <div id="UppercaseError" class="error-message"><i class="fas fa-circle-xmark"></i><span>Password must contain at least one uppercase letter</span></div>
+                            <div id="NumericError" class="error-message"><i class="fas fa-circle-xmark"></i><span>Password must contain at least one numeric digit</span></div>
+                            <div id="SpecialCharError" class="error-message"><i class="fas fa-circle-xmark"></i><span>Password must contain at least one special character</span></div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="input-group">
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-eye-slash cpwdtoggle"></span>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <label id="ConfirmPassword-error" class="error" for="ConfirmPassword"></label>
+                            <span asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            @Html.ReCaptcha()
+                            <label id="g-recaptcha-error" class="error" for="ReCaptcha"></label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <button type="submit" id="btnRegister" class="btn btn-primary btn-block">Register</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="text-center">
+                    <span>Already have account?</span>
+                    <a href="/Home/Index">
+                        <span>Login</span>
+                    </a>
+                </p>
+            </div>
+
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.Register-box -->
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/lib/notiflix/notiflix.js"></script>
+    <script src="~/js/inotiflixalert.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ("@ErrorCode" != "" && "@Message" != "") {
+                ShowAlert("@Message", "@ErrorCode");
+            }
+            $(".error-message-validation").hide();
+            $("#UserRegister").validate({
+                rules: {
+                    FullName: {
+                        required: true,
+                    },
+                    UserType: {
+                        required: true,
+                    },
+                    Email: {
+                        required: true,
+                    },
+                    Password: {
+                        required: true
+                    },
+                    ConfirmPassword: {
+                        required: true
+                    }
+                },
+                messages: {
+                    FullName: {
+                        required: "Full Name is required.",
+                    },
+                    UserType: {
+                        required: "User Type is required.",
+                    },
+                    Email: {
+                        required: "Email is required.",
+                    },
+                    Password: {
+                        required: "Password is required."
+                    },
+                    ConfirmPassword: {
+                        required: "Confirm Password is required."
+                    }
+                }
+            });
+            $("#Password").on("keyup click", function () {
+                $(".error-message-validation").show();
+                var val = $(this).val();
+                PasswordValidate(val);
+            });
+            $("#Email").on("keyup", function () {
+                var val = $(this).val();
+                // Check for email
+                if (val) {
+                    if (!/^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)) {
+                        $(".field-validation-valid[data-valmsg-for='Email']").text("Email is invalid");
+                    }
+                    else {
+                        $(".field-validation-valid[data-valmsg-for='Email']").text("");
+                    }
+                }
+                else {
+                    $(".field-validation-valid[data-valmsg-for='Email']").text("");
+                }
+            });
+            $(".pwdtoggle").on("click", function () {
+                var pwdtoggle = $(this);
+                var input = $("#Password")[0];
+                if (input.type == "password") {
+                    input.type = "type";
+                    pwdtoggle.removeClass("fa-eye-slash");
+                    pwdtoggle.addClass("fa-eye");
+                }
+                else {
+                    input.type = "password";
+                    pwdtoggle.removeClass("fa-eye");
+                    pwdtoggle.addClass("fa-eye-slash");
+                }
+            });
+            $(".cpwdtoggle").on("click", function () {
+                var cpwdtoggle = $(this);
+                var input = $("#ConfirmPassword")[0];
+                if (input.type == "password") {
+                    input.type = "type";
+                    cpwdtoggle.removeClass("fa-eye-slash");
+                    cpwdtoggle.addClass("fa-eye");
+                }
+                else {
+                    input.type = "password";
+                    cpwdtoggle.removeClass("fa-eye");
+                    cpwdtoggle.addClass("fa-eye-slash");
+                }
+            });
+            $(".validation-container").on("mouseover", function () {
+                $(".error-message-validation").show();
+                var val = $("#Password").val();
+                PasswordValidate(val);
+            });
+            $(".validation-container").on("mouseout", function () {
+                $(".error-message-validation").hide();
+                // var val = $("#Password").val();
+                // PasswordValidate(val);
+            });
+            $("#btnRegister").on("click", function (e) {
+                e.preventDefault();
+                $(".field-validation-error").text("");
+                var passwordvalidate = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@.#$!%*?&^])[A-Za-z\d@@.#$!%*?&]{8,15}$/.test($("#Password").val());
+                var emailvalidate = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test($("#Email").val());
+                if (!passwordvalidate) {
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                if ($("#UserRegister").valid() && passwordvalidate && emailvalidate && CheckPasswordAndConfirmPassword()) {
+                    if (grecaptcha.getResponse()) {
+                        $("#Password").css("color", "green");
+                        $("#Password").css("border-color", "green");
+                        $("#UserRegister").submit();
+                    }
+                    else {
+                        $("#g-recaptcha-error").text("Please check reCAPTCHA");
+                    }
+                }
+            });
+            $("#ConfirmPassword").on("keyup blur", function () {
+                if ($(this).val()) {
+                    var check = CheckPasswordAndConfirmPassword();
+                    if (check) {
+                        $("#ConfirmPassword").css("color", "green");
+                        $("#ConfirmPassword").css("border-color", "green");
+                        $("#ConfirmPassword-error").text("");
+                    }
+                    else {
+                        $("#ConfirmPassword").css("color", "red");
+                        $("#ConfirmPassword").css("border-color", "red");
+                        $("#ConfirmPassword-error").text("Password and confirm password does not matched.");
+                    }
+                }
+                else {
+                    $("#ConfirmPassword").css("border-color", "#ced4da");
+                    $("#ConfirmPassword-error").text("");
+                }
+            });
+            function PasswordValidate(val) {
+                $(".validationerror").html("");
+                // Check length
+                if (val.length < 8 || val.length > 20) {
+                    $("#LengthError i").attr("class", "");
+                    $("#LengthError i").addClass("fa-solid fa-circle-xmark");
+                    $("#LengthError").css("color", "red");
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                else {
+                    $("#LengthError i").attr("class", "");
+                    $("#LengthError i").addClass("fa-solid fa-circle-check");
+                    $("#LengthError").css("color", "green");
+                }
+                // Check for lowercase
+                if (!/[a-z]/.test(val)) {
+                    $("#LowercaseError i").attr("class", "");
+                    $("#LowercaseError i").addClass("fa-solid fa-circle-xmark");
+                    $("#LowercaseError").css("color", "red");
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                else {
+                    $("#LowercaseError i").attr("class", "");
+                    $("#LowercaseError i").addClass("fa-solid fa-circle-check");
+                    $("#LowercaseError").css("color", "green");
+                }
+                // Check for uppercase
+                if (!/[A-Z]/.test(val)) {
+                    $("#UppercaseError i").attr("class", "");
+                    $("#UppercaseError i").addClass("fa-solid fa-circle-xmark");
+                    $("#UppercaseError").css("color", "red");
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                else {
+                    $("#UppercaseError i").attr("class", "");
+                    $("#UppercaseError i").addClass("fa-solid fa-circle-check");
+                    $("#UppercaseError").css("color", "green");
+                }
+                // Check for numeric digit
+                if (!/\d/.test(val)) {
+                    $("#NumericError i").attr("class", "");
+                    $("#NumericError i").addClass("fa-solid fa-circle-xmark");
+                    $("#NumericError").css("color", "red");
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                else {
+                    $("#NumericError i").attr("class", "");
+                    $("#NumericError i").addClass("fa-solid fa-circle-check");
+                    $("#NumericError").css("color", "green");
+                }
+                // Check for special character
+                if (!/[@@$.#!%*?&^]/.test(val)) {
+                    $("#SpecialCharError i").attr("class", "");
+                    $("#SpecialCharError i").addClass("fa-solid fa-circle-xmark");
+                    $("#SpecialCharError").css("color", "red");
+                    $("#Password").css("color", "red");
+                    $("#Password").css("border-color", "red");
+                }
+                else {
+                    $("#SpecialCharError i").attr("class", "");
+                    $("#SpecialCharError i").addClass("fa-solid fa-circle-check");
+                    $("#SpecialCharError").css("color", "green");
+                }
+                var passwordvalidate = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@.#$!%*?&^])[A-Za-z\d@@.#$!%*?&]{8,15}$/.test($("#Password").val());
+                if (passwordvalidate) {
+                    $("#Password").css("color", "green");
+                    $("#Password").css("border-color", "green");
+                    return;
+                }
+            }
+            function CheckPasswordAndConfirmPassword() {
+                var password = $("#Password").val();
+                var confirmpassword = $("#ConfirmPassword").val();
+                if (password != confirmpassword) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

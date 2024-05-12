@@ -1,0 +1,19 @@
+Project Name : Login Management System (LMS)
+
+Describe: LMS is used to handle the login and registration. User have to register before login. Password policy is used to validate password for register and login. User can create one user by one email. It is mailny used to manage secure login and registration.
+
+Installation:
+1. Unzip the provided file.
+2. Install Visual studio if not.
+3. Build the program.
+4. Replace server name and database name according to the server in appsettings.json page.
+5. Create database according to the name provided in appsettings.json page.
+6. Create shcema in database.
+7. Create table in database.
+8. Create store procedure in database.
+All the query for the database are inside the LMS.Database folder and each command are places in separate folder.
+
+Usage:
+After following the steps of installation, run the program. You can use short key for that by using (Ctl+f5) or (Ctl+fn+f5).
+
+In this system I have used a AdminLTE template. C# is the main programming language and .Net core is the framework for the backend language. Bootstrap and JQuery is used for the frontend.
